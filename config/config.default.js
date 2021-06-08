@@ -2,6 +2,8 @@
 
 'use strict';
 
+const { DATABASE, USERNAME, PASSWORD, HOST, PORT } = require('./secret');
+
 /**
  * @param {Egg.EggAppInfo} appInfo app info
  */
@@ -21,6 +23,19 @@ module.exports = appInfo => {
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
+  };
+
+  // sequelize 配置(详见https://eggjs.org/zh-cn/tutorials/sequelize.html)
+  config.sequelize = {
+    dialect: 'mysql',
+    dialectOptions: {
+      charset: 'utf8mb4',
+    },
+    database: DATABASE,
+    host: HOST,
+    port: PORT,
+    username: USERNAME,
+    password: PASSWORD,
   };
 
   return {

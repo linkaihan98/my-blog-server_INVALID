@@ -16,3 +16,5 @@ typings/
 # next.js
 ssr/.next/
 ssr/out/
+
+secret.js
